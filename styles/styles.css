@@ -1,0 +1,295 @@
+:root {
+  color-scheme: light;
+  color: #27213c;
+  background: #dfceb3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #dfceb3;
+  overflow-x: hidden;
+}
+
+.image-frame,
+.card-link {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.page {
+  position: relative;
+  width: min(1000px, 100%);
+  text-align: left;
+  padding-top: 18rem;
+}
+
+.hero {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  margin: 0;
+  padding-right: 8vw;
+  text-align: left;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: 'Chelsea Market', cursive;
+  font-size: 12rem;
+  letter-spacing: -0.04em;
+  color: #27213c;
+  line-height: 0.85;
+}
+
+.hero p {
+  margin: 0.5rem 0 3.5rem auto;
+  max-width: 100%;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  color: #27213c;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 600px);
+  gap: 10rem;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.card {
+  width: 600px;
+  max-width: 600px;
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.image-frame {
+  overflow: hidden;
+  border-radius: 5px;
+  transform: rotate(-5deg);
+  position: relative;
+}
+
+.card-right .image-frame {
+  transform: rotate(4deg);
+}
+
+.image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-frame .image-static,
+.image-frame .image-hover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.image-frame .image-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card-left:hover .image-frame .image-static {
+  opacity: 0;
+}
+
+.card-left:hover .image-frame .image-hover {
+  opacity: 1;
+}
+
+.card-link {
+  position: absolute;
+  left: 60%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+
+  display: inline-block;
+  padding: 2rem 3.25rem;
+  background: #c53d3a;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Chelsea Market', cursive;
+  font-size: 2.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  
+  white-space: nowrap;
+}
+
+.card-image-link {
+  display: block;
+  text-decoration: none;
+}
+
+.card-left .card-link {
+    left: 50%;
+    transform: rotate(2deg);
+  }
+
+  .card-right .card-link {
+    left: 15%;
+    transform: rotate(-2deg);
+  }
+
+  .card-image-link {
+    display: block;
+  }
+
+  .card:hover .card-link {
+    filter: brightness(1.05);
+    transform: translateX(0%) scale(1.05);
+  }
+
+  .card-left:hover .card-link {
+    transform: translateX(0%) scale(1.05) rotate(2deg);
+  }
+
+  .card-right:hover .card-link {
+    transform: translateX(0%) scale(1.05) rotate(-2deg);
+  }
+
+  .card:hover .image-frame {
+    transform: scale(1.03) rotate(-5deg);
+  }
+
+  .card-right:hover .image-frame {
+    transform: scale(1.03) rotate(4deg);
+
+  .hero h1 {
+    font-size: 10rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .cards {
+    gap: 6rem;
+  }
+
+  .card {
+    width: min(48vw, 520px);
+  }
+
+  .card-link {
+    font-size: 2rem;
+    padding: 1.2rem 2rem;
+    bottom: 1.5rem;
+  }
+
+}
+
+
+@media (max-width: 1200px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 23rem;
+  }
+  
+
+  .image-frame {
+    transform: rotate(0deg);
+  }
+
+  .card-right .image-frame {
+    transform: rotate(0deg);
+  }
+
+  .card {
+    padding-bottom: 3.5rem;
+  }
+
+  .card-left {
+    order: 2;
+  }
+
+  .card-right {
+    order: 1;
+  }
+
+  .hero {
+    text-align: center;
+    margin-top: 140px;
+    padding-right: 0;
+  }
+
+  .hero h1 {
+    font-size: 8rem;
+  }
+
+  .hero h1 span {
+    display: block;
+    line-height: 1;
+  }
+
+}
+
+@media (max-width: 580px) {
+  .cards {
+    margin-top: 0rem;
+  }
+  
+    .hero {
+    position: static;
+    padding-right: 0;
+    margin-top: 10rem;
+    text-align: center;
+    
+  }
+
+  .hero h1 {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+
+  .hero h1 span {
+    display: block;
+    line-height: 1;
+  }
+
+  .hero p {
+    text-align: center;
+  }
+
+  .card {
+    width: min(90vw, 520px);
+    max-width: 520px;
+  }
+
+  .card-link {
+    font-size: 1.2rem;
+    padding: 0.9rem 1.8rem;
+  }
+
+  .page {
+    padding-top: 67px;
+
+  }
+}
