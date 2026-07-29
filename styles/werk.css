@@ -180,6 +180,20 @@ body {
   transition: all 0.3s ease;
 }
 
+.project-logo {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  object-fit: cover;
+  z-index: 3;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  
+}
+
 .project-tag-dots {
   position: absolute;
   top: 14px;
@@ -189,11 +203,13 @@ body {
   gap: 8px;
   z-index: 2;
   pointer-events: none;
+  transform-origin: top right;
+  transition: transform 0.3s ease;
 }
 
 .project-tag-dot {
-  width: 18px;
-  height: 18px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background: var(--tag-color, #fff);
   border: 2px solid rgba(255, 255, 255, 0.8);
@@ -206,6 +222,11 @@ body {
 
 .project-card:hover .project-info {
   transform: translateX(-50%) scale(1.08);
+}
+
+.project-card:hover .project-tag-dots,
+.project-card:hover .project-logo {
+  transform: scale(1.25);
 }
 
 .project-image {
@@ -227,6 +248,8 @@ body {
   background: #d03e41;
   padding: 1rem 1rem;
   border-radius: 4px;
+  transform-origin: top left;
+  transition: transform 0.3s ease;
   transition: transform 0.3s ease;
 }
 
