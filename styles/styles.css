@@ -24,7 +24,7 @@ html, body {
 
 body {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 40px 20px;
   min-height: 100vh;
@@ -39,7 +39,7 @@ body {
 
 .hero {
   position: absolute;
-  top: 10%;
+  top: 100px;
   left: 0;
   width: 100%;
   z-index: 2;
@@ -90,6 +90,7 @@ body {
 
 .card-right .image-frame {
   transform: rotate(4deg);
+  
 }
 
 .image-frame img {
@@ -129,7 +130,7 @@ body {
   transform: translateX(-50%);
 
   display: inline-block;
-  padding: 2rem 3.25rem;
+  padding: 1.2rem 2rem;
   background: #c53d3a;
   color: #fff;
   text-decoration: none;
@@ -139,6 +140,35 @@ body {
   letter-spacing: 0.02em;
   
   white-space: nowrap;
+}
+
+.standalone-linkedin {
+  position: relative;
+  display: inline-block;
+  margin-top: 3.4rem;
+  margin-left: clamp(90px, 15vw, 210px);
+  transform: rotate(-1deg);
+  padding: 1.2rem 2rem;
+  background: #27213c;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Chelsea Market', cursive;
+  font-size: 2.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.standalone-linkedin:hover {
+  filter: brightness(1.05);
+  transform: scale(1.05) rotate(-1deg);
+}
+
+@media (min-width: 1601px) {
+  .standalone-linkedin {
+    margin-top: 1.8rem;
+  }
 }
 
 .card-image-link {
@@ -196,23 +226,115 @@ body {
     width: min(48vw, 520px);
   }
 
+  
+
   .card-link {
     font-size: 2rem;
     padding: 1.2rem 2rem;
     bottom: 1.5rem;
   }
 
+  
+
+
 }
 
+@media (max-width: 1600px) {
+  .hero {
+    margin-top: 20px;
+    margin-left: 100px;
+    padding-right: 0;
+  }
+  
+  .hero h1 {
+    font-size: 10rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .cards {
+    gap: 0rem;
+  }
+
+  .card {
+    width: min(45vw, 420px);
+  }
+
+  .card-link {
+    font-size: 2.5rem;
+    padding: 1.2rem 2rem;
+    bottom: 1.5rem;
+  }
+
+  .card-left .image-frame {
+  width: 500px;
+  margin-top: 150px;
+}
+
+  .card-right .image-frame {
+  width: 400px;
+  margin: 0 auto;
+}
+
+}
+
+@media (max-height: 1300px) and (min-width: 1201px) {
+  .hero {
+    margin-top: 20px;
+    margin-left: 100px;
+    padding-right: 0;
+  }
+
+  .hero h1 {
+    font-size: 10rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .cards {
+    gap: 0rem;
+  }
+
+  .card {
+    width: min(45vw, 420px);
+  }
+
+  .card-link {
+    font-size: 2.5rem;
+    padding: 1.2rem 2rem;
+    bottom: 1.5rem;
+  }
+
+  .card-left .image-frame {
+    width: 500px;
+    margin-top: 150px;
+  }
+
+  .card-right .image-frame {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
 
 @media (max-width: 1200px) {
   .cards {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    margin-top: 23rem;
+    margin-top: 420px;
   }
   
+.page {
+  position: relative;
+  width: min(1000px, 100%);
+  text-align: left;
+  padding-top: 0rem;
+}
+
 
   .image-frame {
     transform: rotate(0deg);
@@ -221,6 +343,12 @@ body {
   .card-right .image-frame {
     transform: rotate(0deg);
   }
+  
+  .card-left .image-frame {
+  width: 500px;
+  margin-top: 0px;
+  margin-right: 120px;
+}
 
   .card {
     padding-bottom: 3.5rem;
@@ -234,12 +362,30 @@ body {
     order: 1;
   }
 
+  .card-left {
+    margin-right: 70px;
+  }
+
+  .card-right .card-link {
+    left: 0%;
+  }
+
+.hero {
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  margin: 0;
+  padding-right: 8vw;
+  text-align: left;
+}
+
   .hero {
     text-align: center;
-    margin-top: 140px;
+    margin-top: -60px;
     padding-right: 0;
   }
 
+  
   .hero h1 {
     font-size: 8rem;
   }
@@ -249,17 +395,29 @@ body {
     line-height: 1;
   }
 
+  .standalone-linkedin {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto 0;
+    font-size: 2.5rem;
+    padding: 1.2rem 2rem;
+  }
+
 }
 
 @media (max-width: 580px) {
   .cards {
     margin-top: 0rem;
   }
+
+  .card-left {
+    margin-right: 36px;
+  }
   
     .hero {
     position: static;
     padding-right: 0;
-    margin-top: 10rem;
+    margin-top: -70px;
     text-align: center;
     
   }
@@ -279,13 +437,37 @@ body {
   }
 
   .card {
-    width: min(90vw, 520px);
-    max-width: 520px;
+    width: min(72vw, 320px);
+    max-width: 320px;
+  }
+
+  .card-left .image-frame {
+    width: 320px;
+    margin-right: 0;
+  }
+
+  .card-right .image-frame {
+    width: 280px;
+    margin: 0 auto;
   }
 
   .card-link {
-    font-size: 1.2rem;
-    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    padding: 0.7rem 1.3rem;
+  }
+
+  .standalone-linkedin {
+    position: static;
+    display: block;
+    width: fit-content;
+    margin: 1.2rem auto 0;
+    font-size: 1rem;
+    padding: 0.7rem 1.3rem;
+    transform: rotate(-1deg);
+  }
+
+  .standalone-linkedin:hover {
+    transform: scale(1.05) rotate(-1deg);
   }
 
   .page {
