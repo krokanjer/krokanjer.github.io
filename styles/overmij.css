@@ -2,7 +2,7 @@ body {
   margin: 0;
   background: #dfceb3;
   color: #27213c;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Lexend Deca', 'Lexend Deca Light', sans-serif;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -355,7 +355,7 @@ h2 {
 }
 
 .timeline-list span {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Lexend Deca', 'Lexend Deca Light', sans-serif;
   font-size: 0.76rem;
   line-height: 1;
 }
