@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.project-page {
+  width: min(1100px, 100%);
+  min-height: 100vh;
+}
+
+.project-header {
+  margin-top: 80px;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.back-button-circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #d03e41;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.back-arrow-icon {
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 3px;
+  background: #fff;
+  border-radius: 999px;
+  transform: translateX(2px);
+}
+
+.back-arrow-icon::before,
+.back-arrow-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 14px;
+  height: 3px;
+  background: #fff;
+  border-radius: 999px;
+  transform-origin: left center;
+}
+
+.back-arrow-icon::before {
+  top: 0;
+  transform: rotate(-42deg);
+}
+
+.back-arrow-icon::after {
+  top: 0;
+  transform: rotate(42deg);
+}
+
+.back-button:hover .back-button-circle {
+  transform: scale(1.08);
+  background: #c53536;
+}
+
+.project-content {
+  background: #f3eadf;
+  border: 4px solid #dfceb3;
+  border-radius: 6px;
+  padding: 2rem;
+  box-shadow: 0 14px 24px rgba(39, 33, 60, 0.15);
+}
+
+.project-title {
+  margin: 0;
+  font-family: 'Chelsea Market', cursive;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.15;
+  color: #27213c;
+}
+
+.project-subtitle {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: #27213c;
+  font-size: 1.1rem;
+  max-width: 70ch;
+}
+
+@media (max-width: 900px) {
+  .project-header {
+    margin-top: 24px;
+    gap: 1rem;
+  }
+
+  .back-button-circle {
+    width: 62px;
+    height: 62px;
+  }
+
+  .back-arrow-icon {
+    width: 26px;
+  }
+
+  .back-arrow-icon::before,
+  .back-arrow-icon::after {
+    width: 11px;
+  }
+
+  .project-content {
+    padding: 1.4rem;
+  }
+}
